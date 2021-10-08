@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "GLOBAL">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.image_filename">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "PerformanceDataModel.doInfer():ImageInferenceView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.filename">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ImageInferenceView.getImage():ImageInferenceView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "viewModel.image_filename">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #3 in closure #4 in closure #1 in ImageInferenceView.body.getter:ImageInferenceView.swift">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
