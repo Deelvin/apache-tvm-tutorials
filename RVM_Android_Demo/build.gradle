@@ -1,0 +1,52 @@
+buildscript {
+
+    ext {
+        // Top-level variables used for versioning
+        ext.kotlin_version = '1.5.21'
+        ext.java_version = JavaVersion.VERSION_1_8
+    }
+
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.2.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.diffplug.spotless:spotless-plugin-gradle:5.11.1'
+    }
+}
+
+ext {
+    var = 'key1'
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven {
+            url "https://maven.google.com"
+//            url 'http://oss.sonatype.org/content/repositories/snapshots'
+        }
+    }
+}
+
+subprojects {
+    apply plugin: 'com.diffplug.spotless'
+    spotless {
+        java {
+            target "**/*.java"
+            trimTrailingWhitespace()
+            removeUnusedImports()
+            googleJavaFormat()
+            endWithNewline()
+        }
+        kotlin {
+            target "**/*.kt"
+            trimTrailingWhitespace()
+            endWithNewline()
+        }
+    }
+}
