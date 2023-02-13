@@ -1,0 +1,77 @@
+2023-02-10 12:45:50 [INFO] [task_scheduler.cc:160] Initializing Task #2: "fused_nn_batch_flatten"
+2023-02-10 12:45:50 [INFO] [task_scheduler.cc:35] 
+# from tvm.script import tir as T
+@tvm.script.ir_module
+class Module:
+    @T.prim_func
+    def main(p0: T.Buffer[(T.int64(1), T.int64(24), T.int64(24), T.int64(32)), "float32"], tensor: T.Buffer[(T.int64(1), T.int64(18432)), "float32"]):
+        # function attr dict
+        T.func_attr({"global_symbol": "main", "tir.noalias": True})
+        # body
+        # with T.block("root")
+        for ax0, ax1 in T.grid(T.int64(1), T.int64(18432)):
+            with T.block("tensor"):
+                v_ax0, v_ax1 = T.axis.remap("SS", [ax0, ax1])
+                T.reads(p0[v_ax0, v_ax1 % T.int64(18432) // T.int64(768), v_ax1 % T.int64(768) // T.int64(32), v_ax1 % T.int64(32)])
+                T.writes(tensor[v_ax0, v_ax1])
+                tensor[v_ax0, v_ax1] = p0[v_ax0, v_ax1 % T.int64(18432) // T.int64(768), v_ax1 % T.int64(768) // T.int64(32), v_ax1 % T.int64(32)]
+    
+
+2023-02-10 12:45:50 [INFO] [task_scheduler.cc:164] Total 1 design space(s) generated
+2023-02-10 12:45:50 [INFO] [task_scheduler.cc:170] Design space #0:
+# from tvm.script import tir as T
+@tvm.script.ir_module
+class Module:
+    @T.prim_func
+    def main(p0: T.Buffer[(T.int64(1), T.int64(24), T.int64(24), T.int64(32)), "float32"], tensor: T.Buffer[(T.int64(1), T.int64(18432)), "float32"]):
+        # function attr dict
+        T.func_attr({"global_symbol": "main", "tir.noalias": True})
+        # body
+        with T.block("root"):
+            T.reads()
+            T.writes()
+            T.block_attr({"meta_schedule.parallel":128, "meta_schedule.vectorize":64})
+            for ax0, ax1 in T.grid(T.int64(1), T.int64(18432)):
+                with T.block("tensor"):
+                    v_ax0, v_ax1 = T.axis.remap("SS", [ax0, ax1])
+                    T.reads(p0[v_ax0, v_ax1 % T.int64(18432) // T.int64(768), v_ax1 % T.int64(768) // T.int64(32), v_ax1 % T.int64(32)])
+                    T.writes(tensor[v_ax0, v_ax1])
+                    tensor[v_ax0, v_ax1] = p0[v_ax0, v_ax1 % T.int64(18432) // T.int64(768), v_ax1 % T.int64(768) // T.int64(32), v_ax1 % T.int64(32)]
+    
+
+b0 = sch.get_block(name="root", func_name="main")
+sch.annotate(block_or_loop=b0, ann_key="meta_schedule.parallel", ann_val=128)
+sch.annotate(block_or_loop=b0, ann_key="meta_schedule.vectorize", ann_val=64)
+2023-02-10 12:52:14 [INFO] [evolutionary_search.cc:713] Generating candidates......
+2023-02-10 12:52:14 [INFO] [evolutionary_search.cc:715] Picked top 0 candidate(s) from database
+2023-02-10 12:52:14 [INFO] [evolutionary_search.cc:533] Sample-Init-Population summary:
+Postproc #0 [meta_schedule.DisallowDynamicLoop(0x600002d62048)]: 0 failure(s)
+Postproc #1 [meta_schedule.RewriteParallelVectorizeUnroll(0x600002d61088)]: 0 failure(s)
+Postproc #2 [meta_schedule.RewriteReductionBlock(0x600002d60a08)]: 0 failure(s)
+Postproc #3 [meta_schedule.RewriteLayout(0x600002d620e8)]: 0 failure(s)
+2023-02-10 12:52:14 [INFO] [evolutionary_search.cc:723] Sampled 512 candidate(s)
+2023-02-10 12:52:15 [INFO] [evolutionary_search.cc:621] Evolve iter #0 done. Summary:
+Postproc #0 [meta_schedule.DisallowDynamicLoop(0x600002d62048)]: 0 failure(s)
+Postproc #1 [meta_schedule.RewriteParallelVectorizeUnroll(0x600002d61088)]: 0 failure(s)
+Postproc #2 [meta_schedule.RewriteReductionBlock(0x600002d60a08)]: 0 failure(s)
+Postproc #3 [meta_schedule.RewriteLayout(0x600002d620e8)]: 0 failure(s)
+2023-02-10 12:52:16 [INFO] [evolutionary_search.cc:621] Evolve iter #1 done. Summary:
+Postproc #0 [meta_schedule.DisallowDynamicLoop(0x600002d62048)]: 0 failure(s)
+Postproc #1 [meta_schedule.RewriteParallelVectorizeUnroll(0x600002d61088)]: 0 failure(s)
+Postproc #2 [meta_schedule.RewriteReductionBlock(0x600002d60a08)]: 0 failure(s)
+Postproc #3 [meta_schedule.RewriteLayout(0x600002d620e8)]: 0 failure(s)
+2023-02-10 12:52:17 [INFO] [evolutionary_search.cc:621] Evolve iter #2 done. Summary:
+Postproc #0 [meta_schedule.DisallowDynamicLoop(0x600002d62048)]: 0 failure(s)
+Postproc #1 [meta_schedule.RewriteParallelVectorizeUnroll(0x600002d61088)]: 0 failure(s)
+Postproc #2 [meta_schedule.RewriteReductionBlock(0x600002d60a08)]: 0 failure(s)
+Postproc #3 [meta_schedule.RewriteLayout(0x600002d620e8)]: 0 failure(s)
+2023-02-10 12:52:17 [INFO] [evolutionary_search.cc:621] Evolve iter #3 done. Summary:
+Postproc #0 [meta_schedule.DisallowDynamicLoop(0x600002d62048)]: 0 failure(s)
+Postproc #1 [meta_schedule.RewriteParallelVectorizeUnroll(0x600002d61088)]: 0 failure(s)
+Postproc #2 [meta_schedule.RewriteReductionBlock(0x600002d60a08)]: 0 failure(s)
+Postproc #3 [meta_schedule.RewriteLayout(0x600002d620e8)]: 0 failure(s)
+2023-02-10 12:52:18 [INFO] [evolutionary_search.cc:649] Scores of the best 1 candidates:
+[1 : 1]:	0.8570
+2023-02-10 12:52:18 [INFO] [evolutionary_search.cc:727] Got 1 candidate(s) with evolutionary search
+2023-02-10 12:52:18 [INFO] [evolutionary_search.cc:730] Sending 1 candidates(s) for measurement
+2023-02-10 12:57:27 [INFO] [task_scheduler.cc:131] [Task #2: fused_nn_batch_flatten] Trial #1: GFLOPs: 0.0003. Time: 3.0034 us. Best GFLOPs: 0.0003

@@ -1,0 +1,287 @@
+2023-02-10 12:45:34 [INFO] Logging directory: ../Common/my_mnist_model_meta-scheduler_evolutionary/logs
+2023-02-10 12:45:48 [INFO] LocalBuilder: max_workers = 16
+2023-02-10 12:45:49 [INFO] LocalRunner: max_workers = 1
+2023-02-10 12:45:50 [INFO] [task_scheduler.cc:159] Initializing Task #0: "fused_nn_conv2d_add_nn_relu"
+2023-02-10 12:45:50 [INFO] [task_scheduler.cc:159] Initializing Task #1: "fused_nn_conv2d_add_nn_relu_1"
+2023-02-10 12:45:50 [INFO] [task_scheduler.cc:159] Initializing Task #2: "fused_nn_batch_flatten"
+2023-02-10 12:45:50 [INFO] [task_scheduler.cc:159] Initializing Task #3: "fused_nn_dense_add"
+2023-02-10 12:45:51 [INFO] [task_scheduler.cc:159] Initializing Task #4: "fused_nn_softmax"
+2023-02-10 12:45:51 [DEBUG] [task_scheduler.cc:318] 
+ ID |                          Name |     FLOP | Weight | Speed (GFLOPS) | Latency (us) | Weighted Latency (us) | Trials | Done 
+--------------------------------------------------------------------------------------------------------------------------------
+  0 |   fused_nn_conv2d_add_nn_relu |   865280 |      1 |            N/A |          N/A |                   N/A |      0 |      
+  1 | fused_nn_conv2d_add_nn_relu_1 | 21270528 |      1 |            N/A |          N/A |                   N/A |      0 |      
+  2 |        fused_nn_batch_flatten |        1 |      1 |            N/A |          N/A |                   N/A |      0 |      
+  3 |            fused_nn_dense_add |   368650 |      1 |            N/A |          N/A |                   N/A |      0 |      
+  4 |              fused_nn_softmax |       40 |      1 |            N/A |          N/A |                   N/A |      0 |      
+--------------------------------------------------------------------------------------------------------------------------------
+Total trials: 0
+Total latency (us): 0
+
+2023-02-10 12:45:51 [INFO] [task_scheduler.cc:180] TaskScheduler picks Task #0: "fused_nn_conv2d_add_nn_relu"
+2023-02-10 12:46:25 [INFO] [task_scheduler.cc:193] Sending 63 sample(s) to builder
+2023-02-10 12:47:01 [INFO] [task_scheduler.cc:195] Sending 63 sample(s) to runner
+2023-02-10 12:48:53 [INFO] [task_scheduler.cc:180] TaskScheduler picks Task #1: "fused_nn_conv2d_add_nn_relu_1"
+2023-02-10 12:49:43 [INFO] [task_scheduler.cc:193] Sending 64 sample(s) to builder
+2023-02-10 12:50:26 [INFO] [task_scheduler.cc:195] Sending 64 sample(s) to runner
+2023-02-10 12:52:14 [INFO] [task_scheduler.cc:180] TaskScheduler picks Task #2: "fused_nn_batch_flatten"
+2023-02-10 12:52:18 [INFO] [task_scheduler.cc:193] Sending 1 sample(s) to builder
+2023-02-10 12:52:20 [INFO] [task_scheduler.cc:195] Sending 1 sample(s) to runner
+2023-02-10 12:52:22 [INFO] [task_scheduler.cc:180] TaskScheduler picks Task #3: "fused_nn_dense_add"
+2023-02-10 12:52:41 [INFO] [task_scheduler.cc:193] Sending 64 sample(s) to builder
+2023-02-10 12:52:53 [INFO] [task_scheduler.cc:195] Sending 64 sample(s) to runner
+2023-02-10 12:54:55 [INFO] [task_scheduler.cc:180] TaskScheduler picks Task #4: "fused_nn_softmax"
+2023-02-10 12:55:15 [INFO] [task_scheduler.cc:193] Sending 64 sample(s) to builder
+2023-02-10 12:55:19 [INFO] [task_scheduler.cc:195] Sending 64 sample(s) to runner
+2023-02-10 12:57:25 [DEBUG] XGB iter   0: tr-p-rmse: 0.473543	tr-a-peak@32: 1.000000	tr-rmse: 0.220800	tr-rmse: 0.220800
+2023-02-10 12:57:25 [DEBUG] XGB iter  25: tr-p-rmse: 0.064970	tr-a-peak@32: 1.000000	tr-rmse: 0.278685	tr-rmse: 0.278685
+2023-02-10 12:57:25 [DEBUG] XGB iter  50: tr-p-rmse: 0.064943	tr-a-peak@32: 1.000000	tr-rmse: 0.278719	tr-rmse: 0.278719
+2023-02-10 12:57:25 [DEBUG] XGB iter  75: tr-p-rmse: 0.064943	tr-a-peak@32: 1.000000	tr-rmse: 0.278719	tr-rmse: 0.278719
+2023-02-10 12:57:25 [DEBUG] XGB stopped. Best iteration: [35] tr-p-rmse:0.06494	tr-a-peak@32:1.00000	tr-rmse:0.27872	tr-rmse:0.27872 
+2023-02-10 12:57:26 [INFO] [task_scheduler.cc:237] [Updated] Task #0: "fused_nn_conv2d_add_nn_relu"
+2023-02-10 12:57:26 [DEBUG] [task_scheduler.cc:318] 
+ ID |                          Name |     FLOP | Weight | Speed (GFLOPS) | Latency (us) | Weighted Latency (us) | Trials | Done 
+--------------------------------------------------------------------------------------------------------------------------------
+  0 |   fused_nn_conv2d_add_nn_relu |   865280 |      1 |       128.9421 |       6.7106 |                6.7106 |     63 |      
+  1 | fused_nn_conv2d_add_nn_relu_1 | 21270528 |      1 |            N/A |          N/A |                   N/A |      0 |      
+  2 |        fused_nn_batch_flatten |        1 |      1 |            N/A |          N/A |                   N/A |      0 |      
+  3 |            fused_nn_dense_add |   368650 |      1 |            N/A |          N/A |                   N/A |      0 |      
+  4 |              fused_nn_softmax |       40 |      1 |            N/A |          N/A |                   N/A |      0 |      
+--------------------------------------------------------------------------------------------------------------------------------
+Total trials: 63
+Total latency (us): 6.71061
+
+2023-02-10 12:57:27 [DEBUG] XGB iter   0: tr-p-rmse: 0.531941	tr-a-peak@32: 1.000000	tr-rmse: 0.235527	tr-rmse: 0.235527
+2023-02-10 12:57:27 [DEBUG] XGB iter  25: tr-p-rmse: 0.064499	tr-a-peak@32: 1.000000	tr-rmse: 0.273028	tr-rmse: 0.273028
+2023-02-10 12:57:27 [DEBUG] XGB iter  50: tr-p-rmse: 0.064478	tr-a-peak@32: 1.000000	tr-rmse: 0.273049	tr-rmse: 0.273049
+2023-02-10 12:57:27 [DEBUG] XGB iter  75: tr-p-rmse: 0.064478	tr-a-peak@32: 1.000000	tr-rmse: 0.273049	tr-rmse: 0.273049
+2023-02-10 12:57:27 [DEBUG] XGB stopped. Best iteration: [32] tr-p-rmse:0.06448	tr-a-peak@32:1.00000	tr-rmse:0.27305	tr-rmse:0.27305 
+2023-02-10 12:57:27 [INFO] [task_scheduler.cc:237] [Updated] Task #1: "fused_nn_conv2d_add_nn_relu_1"
+2023-02-10 12:57:27 [DEBUG] [task_scheduler.cc:318] 
+ ID |                          Name |     FLOP | Weight | Speed (GFLOPS) | Latency (us) | Weighted Latency (us) | Trials | Done 
+--------------------------------------------------------------------------------------------------------------------------------
+  0 |   fused_nn_conv2d_add_nn_relu |   865280 |      1 |       128.9421 |       6.7106 |                6.7106 |     63 |      
+  1 | fused_nn_conv2d_add_nn_relu_1 | 21270528 |      1 |       344.7980 |      61.6898 |               61.6898 |     64 |      
+  2 |        fused_nn_batch_flatten |        1 |      1 |            N/A |          N/A |                   N/A |      0 |      
+  3 |            fused_nn_dense_add |   368650 |      1 |            N/A |          N/A |                   N/A |      0 |      
+  4 |              fused_nn_softmax |       40 |      1 |            N/A |          N/A |                   N/A |      0 |      
+--------------------------------------------------------------------------------------------------------------------------------
+Total trials: 127
+Total latency (us): 68.4004
+
+2023-02-10 12:57:27 [INFO] [task_scheduler.cc:237] [Updated] Task #2: "fused_nn_batch_flatten"
+2023-02-10 12:57:27 [DEBUG] [task_scheduler.cc:318] 
+ ID |                          Name |     FLOP | Weight | Speed (GFLOPS) | Latency (us) | Weighted Latency (us) | Trials | Done 
+--------------------------------------------------------------------------------------------------------------------------------
+  0 |   fused_nn_conv2d_add_nn_relu |   865280 |      1 |       128.9421 |       6.7106 |                6.7106 |     63 |      
+  1 | fused_nn_conv2d_add_nn_relu_1 | 21270528 |      1 |       344.7980 |      61.6898 |               61.6898 |     64 |      
+  2 |        fused_nn_batch_flatten |        1 |      1 |         0.0003 |       3.0034 |                3.0034 |      1 |      
+  3 |            fused_nn_dense_add |   368650 |      1 |            N/A |          N/A |                   N/A |      0 |      
+  4 |              fused_nn_softmax |       40 |      1 |            N/A |          N/A |                   N/A |      0 |      
+--------------------------------------------------------------------------------------------------------------------------------
+Total trials: 128
+Total latency (us): 71.4038
+
+2023-02-10 12:57:28 [DEBUG] XGB iter   0: tr-p-rmse: 0.509080	tr-a-peak@32: 0.997636	tr-rmse: 0.239295	tr-rmse: 0.239295
+2023-02-10 12:57:28 [DEBUG] XGB iter  25: tr-p-rmse: 0.059429	tr-a-peak@32: 1.000000	tr-rmse: 0.300889	tr-rmse: 0.300889
+2023-02-10 12:57:28 [DEBUG] XGB iter  50: tr-p-rmse: 0.054222	tr-a-peak@32: 1.000000	tr-rmse: 0.300783	tr-rmse: 0.300783
+2023-02-10 12:57:29 [DEBUG] XGB iter  75: tr-p-rmse: 0.054222	tr-a-peak@32: 1.000000	tr-rmse: 0.300783	tr-rmse: 0.300783
+2023-02-10 12:57:29 [DEBUG] XGB stopped. Best iteration: [41] tr-p-rmse:0.05422	tr-a-peak@32:1.00000	tr-rmse:0.30078	tr-rmse:0.30078 
+2023-02-10 12:57:29 [INFO] [task_scheduler.cc:237] [Updated] Task #3: "fused_nn_dense_add"
+2023-02-10 12:57:29 [DEBUG] [task_scheduler.cc:318] 
+ ID |                          Name |     FLOP | Weight | Speed (GFLOPS) | Latency (us) | Weighted Latency (us) | Trials | Done 
+--------------------------------------------------------------------------------------------------------------------------------
+  0 |   fused_nn_conv2d_add_nn_relu |   865280 |      1 |       128.9421 |       6.7106 |                6.7106 |     63 |      
+  1 | fused_nn_conv2d_add_nn_relu_1 | 21270528 |      1 |       344.7980 |      61.6898 |               61.6898 |     64 |      
+  2 |        fused_nn_batch_flatten |        1 |      1 |         0.0003 |       3.0034 |                3.0034 |      1 |      
+  3 |            fused_nn_dense_add |   368650 |      1 |        21.6942 |      16.9930 |               16.9930 |     64 |      
+  4 |              fused_nn_softmax |       40 |      1 |            N/A |          N/A |                   N/A |      0 |      
+--------------------------------------------------------------------------------------------------------------------------------
+Total trials: 192
+Total latency (us): 88.3968
+
+2023-02-10 12:57:30 [DEBUG] XGB iter   0: tr-p-rmse: 0.743981	tr-a-peak@32: 0.456011	tr-rmse: 0.366305	tr-rmse: 0.366305
+2023-02-10 12:57:30 [DEBUG] XGB iter  25: tr-p-rmse: 0.150127	tr-a-peak@32: 1.000000	tr-rmse: 0.405084	tr-rmse: 0.405084
+2023-02-10 12:57:30 [DEBUG] XGB iter  50: tr-p-rmse: 0.139555	tr-a-peak@32: 1.000000	tr-rmse: 0.405143	tr-rmse: 0.405143
+2023-02-10 12:57:30 [DEBUG] XGB iter  75: tr-p-rmse: 0.139555	tr-a-peak@32: 1.000000	tr-rmse: 0.405143	tr-rmse: 0.405143
+2023-02-10 12:57:30 [DEBUG] XGB stopped. Best iteration: [45] tr-p-rmse:0.13956	tr-a-peak@32:1.00000	tr-rmse:0.40514	tr-rmse:0.40514 
+2023-02-10 12:57:30 [INFO] [task_scheduler.cc:237] [Updated] Task #4: "fused_nn_softmax"
+2023-02-10 12:57:30 [DEBUG] [task_scheduler.cc:318] 
+ ID |                          Name |     FLOP | Weight | Speed (GFLOPS) | Latency (us) | Weighted Latency (us) | Trials | Done 
+--------------------------------------------------------------------------------------------------------------------------------
+  0 |   fused_nn_conv2d_add_nn_relu |   865280 |      1 |       128.9421 |       6.7106 |                6.7106 |     63 |      
+  1 | fused_nn_conv2d_add_nn_relu_1 | 21270528 |      1 |       344.7980 |      61.6898 |               61.6898 |     64 |      
+  2 |        fused_nn_batch_flatten |        1 |      1 |         0.0003 |       3.0034 |                3.0034 |      1 |      
+  3 |            fused_nn_dense_add |   368650 |      1 |        21.6942 |      16.9930 |               16.9930 |     64 |      
+  4 |              fused_nn_softmax |       40 |      1 |         0.3295 |       0.1214 |                0.1214 |     64 |      
+--------------------------------------------------------------------------------------------------------------------------------
+Total trials: 256
+Total latency (us): 88.5182
+
+2023-02-10 12:57:30 [INFO] [task_scheduler.cc:180] TaskScheduler picks Task #1: "fused_nn_conv2d_add_nn_relu_1"
+2023-02-10 12:59:04 [INFO] [task_scheduler.cc:193] Sending 64 sample(s) to builder
+2023-02-10 12:59:24 [INFO] [task_scheduler.cc:195] Sending 64 sample(s) to runner
+2023-02-10 13:01:26 [DEBUG] XGB validation: p-rmse: 0.311931	a-peak@32: 0.965759
+2023-02-10 13:01:26 [DEBUG] XGB iter   0: tr-p-rmse: 0.699197	tr-a-peak@32: 0.456011	tr-rmse: 0.333506	tr-rmse: 0.333506
+2023-02-10 13:01:27 [DEBUG] XGB iter  25: tr-p-rmse: 0.143260	tr-a-peak@32: 1.000000	tr-rmse: 0.382981	tr-rmse: 0.382981
+2023-02-10 13:01:27 [DEBUG] XGB iter  50: tr-p-rmse: 0.137828	tr-a-peak@32: 1.000000	tr-rmse: 0.383013	tr-rmse: 0.383013
+2023-02-10 13:01:27 [DEBUG] XGB iter  75: tr-p-rmse: 0.137828	tr-a-peak@32: 1.000000	tr-rmse: 0.383013	tr-rmse: 0.383013
+2023-02-10 13:01:27 [DEBUG] XGB stopped. Best iteration: [38] tr-p-rmse:0.13783	tr-a-peak@32:1.00000	tr-rmse:0.38301	tr-rmse:0.38301 
+2023-02-10 13:01:27 [INFO] [task_scheduler.cc:237] [Updated] Task #1: "fused_nn_conv2d_add_nn_relu_1"
+2023-02-10 13:01:27 [DEBUG] [task_scheduler.cc:318] 
+ ID |                          Name |     FLOP | Weight | Speed (GFLOPS) | Latency (us) | Weighted Latency (us) | Trials | Done 
+--------------------------------------------------------------------------------------------------------------------------------
+  0 |   fused_nn_conv2d_add_nn_relu |   865280 |      1 |       128.9421 |       6.7106 |                6.7106 |     63 |      
+  1 | fused_nn_conv2d_add_nn_relu_1 | 21270528 |      1 |       344.7980 |      61.6898 |               61.6898 |    128 |      
+  2 |        fused_nn_batch_flatten |        1 |      1 |         0.0003 |       3.0034 |                3.0034 |      1 |      
+  3 |            fused_nn_dense_add |   368650 |      1 |        21.6942 |      16.9930 |               16.9930 |     64 |      
+  4 |              fused_nn_softmax |       40 |      1 |         0.3295 |       0.1214 |                0.1214 |     64 |      
+--------------------------------------------------------------------------------------------------------------------------------
+Total trials: 320
+Total latency (us): 88.5182
+
+2023-02-10 13:01:27 [INFO] [task_scheduler.cc:180] TaskScheduler picks Task #1: "fused_nn_conv2d_add_nn_relu_1"
+2023-02-10 13:03:02 [INFO] [task_scheduler.cc:193] Sending 64 sample(s) to builder
+2023-02-10 13:03:24 [INFO] [task_scheduler.cc:195] Sending 64 sample(s) to runner
+2023-02-10 13:05:32 [DEBUG] XGB validation: p-rmse: 0.237575	a-peak@32: 0.942310
+2023-02-10 13:05:32 [DEBUG] XGB iter   0: tr-p-rmse: 0.654447	tr-a-peak@32: 0.248816	tr-rmse: 0.308051	tr-rmse: 0.308051
+2023-02-10 13:05:32 [DEBUG] XGB iter  25: tr-p-rmse: 0.140428	tr-a-peak@32: 1.000000	tr-rmse: 0.366483	tr-rmse: 0.366483
+2023-02-10 13:05:32 [DEBUG] XGB iter  50: tr-p-rmse: 0.134568	tr-a-peak@32: 1.000000	tr-rmse: 0.366521	tr-rmse: 0.366521
+2023-02-10 13:05:32 [DEBUG] XGB iter  75: tr-p-rmse: 0.134568	tr-a-peak@32: 1.000000	tr-rmse: 0.366521	tr-rmse: 0.366521
+2023-02-10 13:05:32 [DEBUG] XGB stopped. Best iteration: [41] tr-p-rmse:0.13457	tr-a-peak@32:1.00000	tr-rmse:0.36652	tr-rmse:0.36652 
+2023-02-10 13:05:32 [INFO] [task_scheduler.cc:237] [Updated] Task #1: "fused_nn_conv2d_add_nn_relu_1"
+2023-02-10 13:05:32 [DEBUG] [task_scheduler.cc:318] 
+ ID |                          Name |     FLOP | Weight | Speed (GFLOPS) | Latency (us) | Weighted Latency (us) | Trials | Done 
+--------------------------------------------------------------------------------------------------------------------------------
+  0 |   fused_nn_conv2d_add_nn_relu |   865280 |      1 |       128.9421 |       6.7106 |                6.7106 |     63 |      
+  1 | fused_nn_conv2d_add_nn_relu_1 | 21270528 |      1 |       344.7980 |      61.6898 |               61.6898 |    192 |      
+  2 |        fused_nn_batch_flatten |        1 |      1 |         0.0003 |       3.0034 |                3.0034 |      1 |      
+  3 |            fused_nn_dense_add |   368650 |      1 |        21.6942 |      16.9930 |               16.9930 |     64 |      
+  4 |              fused_nn_softmax |       40 |      1 |         0.3295 |       0.1214 |                0.1214 |     64 |      
+--------------------------------------------------------------------------------------------------------------------------------
+Total trials: 384
+Total latency (us): 88.5182
+
+2023-02-10 13:05:32 [INFO] [task_scheduler.cc:180] TaskScheduler picks Task #1: "fused_nn_conv2d_add_nn_relu_1"
+2023-02-10 13:07:14 [INFO] [task_scheduler.cc:193] Sending 64 sample(s) to builder
+2023-02-10 13:07:35 [INFO] [task_scheduler.cc:195] Sending 64 sample(s) to runner
+2023-02-10 13:09:43 [DEBUG] XGB validation: p-rmse: 0.181724	a-peak@32: 0.962102
+2023-02-10 13:09:43 [INFO] [task_scheduler.cc:237] [Updated] Task #1: "fused_nn_conv2d_add_nn_relu_1"
+2023-02-10 13:09:43 [DEBUG] [task_scheduler.cc:318] 
+ ID |                          Name |     FLOP | Weight | Speed (GFLOPS) | Latency (us) | Weighted Latency (us) | Trials | Done 
+--------------------------------------------------------------------------------------------------------------------------------
+  0 |   fused_nn_conv2d_add_nn_relu |   865280 |      1 |       128.9421 |       6.7106 |                6.7106 |     63 |      
+  1 | fused_nn_conv2d_add_nn_relu_1 | 21270528 |      1 |       344.7980 |      61.6898 |               61.6898 |    256 |      
+  2 |        fused_nn_batch_flatten |        1 |      1 |         0.0003 |       3.0034 |                3.0034 |      1 |      
+  3 |            fused_nn_dense_add |   368650 |      1 |        21.6942 |      16.9930 |               16.9930 |     64 |      
+  4 |              fused_nn_softmax |       40 |      1 |         0.3295 |       0.1214 |                0.1214 |     64 |      
+--------------------------------------------------------------------------------------------------------------------------------
+Total trials: 448
+Total latency (us): 88.5182
+
+2023-02-10 13:09:43 [INFO] [task_scheduler.cc:180] TaskScheduler picks Task #3: "fused_nn_dense_add"
+2023-02-10 13:10:27 [INFO] [task_scheduler.cc:193] Sending 64 sample(s) to builder
+2023-02-10 13:11:01 [INFO] [task_scheduler.cc:195] Sending 64 sample(s) to runner
+2023-02-10 13:13:06 [DEBUG] XGB validation: p-rmse: 0.212360	a-peak@32: 0.971552
+2023-02-10 13:13:06 [DEBUG] XGB iter   0: tr-p-rmse: 0.635162	tr-a-peak@32: 0.303113	tr-rmse: 0.305954	tr-rmse: 0.305954
+2023-02-10 13:13:06 [DEBUG] XGB iter  25: tr-p-rmse: 0.136663	tr-a-peak@32: 1.000000	tr-rmse: 0.372131	tr-rmse: 0.372131
+2023-02-10 13:13:07 [DEBUG] XGB iter  50: tr-p-rmse: 0.122042	tr-a-peak@32: 1.000000	tr-rmse: 0.371949	tr-rmse: 0.371949
+2023-02-10 13:13:07 [DEBUG] XGB iter  75: tr-p-rmse: 0.121483	tr-a-peak@32: 1.000000	tr-rmse: 0.371968	tr-rmse: 0.371968
+2023-02-10 13:13:07 [DEBUG] XGB iter 100: tr-p-rmse: 0.121483	tr-a-peak@32: 1.000000	tr-rmse: 0.371968	tr-rmse: 0.371968
+2023-02-10 13:13:07 [DEBUG] XGB stopped. Best iteration: [56] tr-p-rmse:0.12148	tr-a-peak@32:1.00000	tr-rmse:0.37197	tr-rmse:0.37197 
+2023-02-10 13:13:07 [INFO] [task_scheduler.cc:237] [Updated] Task #3: "fused_nn_dense_add"
+2023-02-10 13:13:07 [DEBUG] [task_scheduler.cc:318] 
+ ID |                          Name |     FLOP | Weight | Speed (GFLOPS) | Latency (us) | Weighted Latency (us) | Trials | Done 
+--------------------------------------------------------------------------------------------------------------------------------
+  0 |   fused_nn_conv2d_add_nn_relu |   865280 |      1 |       128.9421 |       6.7106 |                6.7106 |     63 |      
+  1 | fused_nn_conv2d_add_nn_relu_1 | 21270528 |      1 |       344.7980 |      61.6898 |               61.6898 |    256 |      
+  2 |        fused_nn_batch_flatten |        1 |      1 |         0.0003 |       3.0034 |                3.0034 |      1 |      
+  3 |            fused_nn_dense_add |   368650 |      1 |        28.6484 |      12.8681 |               12.8681 |    128 |      
+  4 |              fused_nn_softmax |       40 |      1 |         0.3295 |       0.1214 |                0.1214 |     64 |      
+--------------------------------------------------------------------------------------------------------------------------------
+Total trials: 512
+Total latency (us): 84.3933
+
+2023-02-10 13:13:07 [INFO] [task_scheduler.cc:180] TaskScheduler picks Task #1: "fused_nn_conv2d_add_nn_relu_1"
+2023-02-10 13:13:07 [INFO] [task_scheduler.cc:260] Task #1 has finished. Remaining task(s): 4
+2023-02-10 13:13:07 [DEBUG] [task_scheduler.cc:318] 
+ ID |                          Name |     FLOP | Weight | Speed (GFLOPS) | Latency (us) | Weighted Latency (us) | Trials | Done 
+--------------------------------------------------------------------------------------------------------------------------------
+  0 |   fused_nn_conv2d_add_nn_relu |   865280 |      1 |       128.9421 |       6.7106 |                6.7106 |     63 |      
+  1 | fused_nn_conv2d_add_nn_relu_1 | 21270528 |      1 |       344.7980 |      61.6898 |               61.6898 |    256 |    Y 
+  2 |        fused_nn_batch_flatten |        1 |      1 |         0.0003 |       3.0034 |                3.0034 |      1 |      
+  3 |            fused_nn_dense_add |   368650 |      1 |        28.6484 |      12.8681 |               12.8681 |    128 |      
+  4 |              fused_nn_softmax |       40 |      1 |         0.3295 |       0.1214 |                0.1214 |     64 |      
+--------------------------------------------------------------------------------------------------------------------------------
+Total trials: 512
+Total latency (us): 84.3933
+
+2023-02-10 13:13:07 [INFO] [task_scheduler.cc:180] TaskScheduler picks Task #0: "fused_nn_conv2d_add_nn_relu"
+2023-02-10 13:14:34 [INFO] [task_scheduler.cc:193] Sending 64 sample(s) to builder
+2023-02-10 13:14:47 [INFO] [task_scheduler.cc:195] Sending 64 sample(s) to runner
+2023-02-10 13:16:48 [DEBUG] XGB validation: p-rmse: 0.212450	a-peak@32: 0.839446
+2023-02-10 13:16:48 [INFO] [task_scheduler.cc:237] [Updated] Task #0: "fused_nn_conv2d_add_nn_relu"
+2023-02-10 13:16:49 [DEBUG] [task_scheduler.cc:318] 
+ ID |                          Name |     FLOP | Weight | Speed (GFLOPS) | Latency (us) | Weighted Latency (us) | Trials | Done 
+--------------------------------------------------------------------------------------------------------------------------------
+  0 |   fused_nn_conv2d_add_nn_relu |   865280 |      1 |       129.7598 |       6.6683 |                6.6683 |    127 |      
+  1 | fused_nn_conv2d_add_nn_relu_1 | 21270528 |      1 |       344.7980 |      61.6898 |               61.6898 |    256 |    Y 
+  2 |        fused_nn_batch_flatten |        1 |      1 |         0.0003 |       3.0034 |                3.0034 |      1 |      
+  3 |            fused_nn_dense_add |   368650 |      1 |        28.6484 |      12.8681 |               12.8681 |    128 |      
+  4 |              fused_nn_softmax |       40 |      1 |         0.3295 |       0.1214 |                0.1214 |     64 |      
+--------------------------------------------------------------------------------------------------------------------------------
+Total trials: 576
+Total latency (us): 84.3511
+
+2023-02-10 13:16:49 [INFO] [task_scheduler.cc:260] Task #0 has finished. Remaining task(s): 3
+2023-02-10 13:16:49 [DEBUG] [task_scheduler.cc:318] 
+ ID |                          Name |     FLOP | Weight | Speed (GFLOPS) | Latency (us) | Weighted Latency (us) | Trials | Done 
+--------------------------------------------------------------------------------------------------------------------------------
+  0 |   fused_nn_conv2d_add_nn_relu |   865280 |      1 |       129.7598 |       6.6683 |                6.6683 |    127 |    Y 
+  1 | fused_nn_conv2d_add_nn_relu_1 | 21270528 |      1 |       344.7980 |      61.6898 |               61.6898 |    256 |    Y 
+  2 |        fused_nn_batch_flatten |        1 |      1 |         0.0003 |       3.0034 |                3.0034 |      1 |      
+  3 |            fused_nn_dense_add |   368650 |      1 |        28.6484 |      12.8681 |               12.8681 |    128 |      
+  4 |              fused_nn_softmax |       40 |      1 |         0.3295 |       0.1214 |                0.1214 |     64 |      
+--------------------------------------------------------------------------------------------------------------------------------
+Total trials: 576
+Total latency (us): 84.3511
+
+2023-02-10 13:16:49 [INFO] [task_scheduler.cc:260] Task #2 has finished. Remaining task(s): 2
+2023-02-10 13:16:49 [DEBUG] [task_scheduler.cc:318] 
+ ID |                          Name |     FLOP | Weight | Speed (GFLOPS) | Latency (us) | Weighted Latency (us) | Trials | Done 
+--------------------------------------------------------------------------------------------------------------------------------
+  0 |   fused_nn_conv2d_add_nn_relu |   865280 |      1 |       129.7598 |       6.6683 |                6.6683 |    127 |    Y 
+  1 | fused_nn_conv2d_add_nn_relu_1 | 21270528 |      1 |       344.7980 |      61.6898 |               61.6898 |    256 |    Y 
+  2 |        fused_nn_batch_flatten |        1 |      1 |         0.0003 |       3.0034 |                3.0034 |      1 |    Y 
+  3 |            fused_nn_dense_add |   368650 |      1 |        28.6484 |      12.8681 |               12.8681 |    128 |      
+  4 |              fused_nn_softmax |       40 |      1 |         0.3295 |       0.1214 |                0.1214 |     64 |      
+--------------------------------------------------------------------------------------------------------------------------------
+Total trials: 576
+Total latency (us): 84.3511
+
+2023-02-10 13:16:49 [INFO] [task_scheduler.cc:260] Task #3 has finished. Remaining task(s): 1
+2023-02-10 13:16:49 [DEBUG] [task_scheduler.cc:318] 
+ ID |                          Name |     FLOP | Weight | Speed (GFLOPS) | Latency (us) | Weighted Latency (us) | Trials | Done 
+--------------------------------------------------------------------------------------------------------------------------------
+  0 |   fused_nn_conv2d_add_nn_relu |   865280 |      1 |       129.7598 |       6.6683 |                6.6683 |    127 |    Y 
+  1 | fused_nn_conv2d_add_nn_relu_1 | 21270528 |      1 |       344.7980 |      61.6898 |               61.6898 |    256 |    Y 
+  2 |        fused_nn_batch_flatten |        1 |      1 |         0.0003 |       3.0034 |                3.0034 |      1 |    Y 
+  3 |            fused_nn_dense_add |   368650 |      1 |        28.6484 |      12.8681 |               12.8681 |    128 |    Y 
+  4 |              fused_nn_softmax |       40 |      1 |         0.3295 |       0.1214 |                0.1214 |     64 |      
+--------------------------------------------------------------------------------------------------------------------------------
+Total trials: 576
+Total latency (us): 84.3511
+
+2023-02-10 13:16:49 [INFO] [task_scheduler.cc:260] Task #4 has finished. Remaining task(s): 0
+2023-02-10 13:16:49 [DEBUG] [task_scheduler.cc:318] 
+ ID |                          Name |     FLOP | Weight | Speed (GFLOPS) | Latency (us) | Weighted Latency (us) | Trials | Done 
+--------------------------------------------------------------------------------------------------------------------------------
+  0 |   fused_nn_conv2d_add_nn_relu |   865280 |      1 |       129.7598 |       6.6683 |                6.6683 |    127 |    Y 
+  1 | fused_nn_conv2d_add_nn_relu_1 | 21270528 |      1 |       344.7980 |      61.6898 |               61.6898 |    256 |    Y 
+  2 |        fused_nn_batch_flatten |        1 |      1 |         0.0003 |       3.0034 |                3.0034 |      1 |    Y 
+  3 |            fused_nn_dense_add |   368650 |      1 |        28.6484 |      12.8681 |               12.8681 |    128 |    Y 
+  4 |              fused_nn_softmax |       40 |      1 |         0.3295 |       0.1214 |                0.1214 |     64 |    Y 
+--------------------------------------------------------------------------------------------------------------------------------
+Total trials: 576
+Total latency (us): 84.3511
+
